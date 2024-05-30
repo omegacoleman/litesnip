@@ -1,4 +1,4 @@
-vim9script
+vim9script noclear
 
 if get(g:, 'loaded_litesnip', false)
   finish
@@ -59,9 +59,9 @@ def ExpandSnip(snip: list<string>, dels: number)
 enddef
 
 class SnipTree
-  this.snips: dict<list<string>>
-  this.targets: dict<string>
-  this.the_tree: list<dict<number>>
+  var snips: dict<list<string>>
+  var targets: dict<string>
+  var the_tree: list<dict<number>>
 
   def new()
     this.Clear()
@@ -167,7 +167,7 @@ export def g:LiteSnipExpand()
   endif
 enddef
 
-defcompile
+# defcompile
 
 autocmd BufNewFile,BufReadPost * call g:LiteSnipLoadForFiletype(&filetype)
 inoremap <silent> <c-s> <c-\><c-o>:call g:LiteSnipExpand()<cr>
