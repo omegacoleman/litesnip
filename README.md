@@ -1,9 +1,9 @@
 litesnip
---------
+========
 
 A lightweight snip plugin written in vim9script.
 
-# 1. writing snips
+## 1. writing snips
 
 First, create a folder named `litesnips/<filetype>` under vim runpath, for example, `~/.vim/litesnips/cpp`
 
@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 
 the `####` is where the cursor will be placed after expansion, if not present, the cursor is placed after the end.
 
-# 2. usage
+## 2. usage
 
 In insert mode, type `<c-s>` to expand snips.
 
